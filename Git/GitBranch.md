@@ -8,5 +8,5 @@
 - git checkout [分支名]
 - ex : git checkout test  #切换到test分支
 ## 删除分支
-- git branch -d [分支名]
-- ex : git branch -d test  #删除test分支
+- git branch -D [分支名]
+- ex : git branch -D test  #删除test分支
