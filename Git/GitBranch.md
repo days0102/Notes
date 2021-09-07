@@ -1,0 +1,12 @@
+# Git Branch 的操作
+## 查看分支
+- git branch
+## 添加分支
+- git branch [分支名]
+- ex : git branch test  #创建test分支
+## 切换分支
+- git checkout [分支名]
+- ex : git checkout test  #切换到test分支
+## 删除分支
+- git branch -d [分支名]
+- ex : git branch -d test  #删除test分支
