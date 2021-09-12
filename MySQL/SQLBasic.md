@@ -49,6 +49,13 @@ Uptime:                 18 hours 34 min 38 sec
 
 Threads: 2  Questions: 7410  Slow queries: 0  Opens: 375  Flush tables: 3  Open tables: 280  Queries per second avg: 0.110
 ```
+
+## SQL注释
+- 单行注释
+  1. -- [注释内容] #--后要有空格
+- 多行注释
+  1. /*注释内容*/
+   
 # SQL基本语句
 ## 查看数据库
 - SHOW DATABASES;
@@ -64,6 +71,7 @@ Threads: 2  Questions: 7410  Slow queries: 0  Opens: 375  Flush tables: 3  Open 
 | world              |
 +--------------------+
 ```
+
 ## 数据库的创建
 - CREATE DATABASE [数据库名称];
 - ex : CREAT DATABASE shop;
@@ -89,12 +97,25 @@ Query OK, 1 row affected (0.01 sec)
 Create Database: CREATE DATABASE `shop` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */
 1 row in set (0.00 sec)
 ``` 
+
 ## 选择数据库
 - USE [库名];
 - ex : USE shop;
 ```SQL
 Database changed
 ```
+
+## 显示当前使用的数据库
+- SELECT DATABASE();
+```SQL
++------------+
+| DATABASE() |
++------------+
+| shop       |
++------------+
+1 row in set (0.00 sec)
+```
+
 ## 表的创建
 - CREATE TABLE <表明>  
   (<列名1> <数据类型> <该列的约束>,  
@@ -105,11 +126,97 @@ Database changed
   ...........);
 - ex :  
   CREATE TABLE Product
-   (product_id CHAR(4) NOT NULL,  
+   (product_id CHAR(4) NOT NULL,  -- NOT NULL非空约束
    product_name CHAR(100) NOT NULL,  
    product_type VARCHAR(32) NOT NULL,  
    sale_price INTEGER ,  
    purchase_price INTEGER,  
    regist_date DATE,  
-   PRIMARY KEY (product_id));
-  
+   PRIMARY KEY (product_id));  -- 主键约束（唯一标识）product_id
+```SQL
+Query OK, 0 rows affected (0.06 sec)
+```
+
+## 显示所有的表
+- SHOW TABLES;
+```SQL
++----------------+
+| Tables_in_shop |
++----------------+
+| product        |
++----------------+
+1 row in set (0.01 sec)
+```
+
+## 表的删除
+- DROP TABLE [表名];
+- <u>注：删除的表不能恢复</u>
+- ex : DROP TABLE Test;
+```SQL
+Query OK, 0 rows affected (0.03 sec)
+```
+
+## 查看表的基本结构
+- DESCRIBE [表名];
+- DESC [表名]; #简写
+- ex : DESCRIBE Product;
+```SQL
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| product_id     | char(4)     | NO   | PRI | NULL    |       |
+| product_name   | char(100)   | NO   |     | NULL    |       |
+| product_type   | varchar(32) | NO   |     | NULL    |       |
+| sale_price     | int         | YES  |     | NULL    |       |
+| purchase_price | int         | YES  |     | NULL    |       |
+| regist_date    | date        | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+```
+- 字段含义
+  - NULL: 表示该字段是否可以存储空值
+  - KEY: 表示该列是否已经编制索引
+    - PRI : 该列是主键的一部分
+    - UNI : 该列是UNIQUE索引的一部分
+    - MUL : 在列中某个给定的值允许出现多次
+  - Default: 表示该列是否有默认值，有则显示值是多少
+  - Extra: 表示可以获取的与给定列有关的附加信息，如AUTO_INCREMENT等
+
+## 表的更新
+### 添加列
+- ALTER TABLE [表名] ADD COLUMN <列的定义>;
+  - Oracle和SQL Server中不用写COLUMN
+    - ALTER TABLE [表名] ADD <列名>;
+  - Oracle中同时添加多列时可用括号括起来
+    - ALTER TABLE [表名] ADD (<列名>,<列名>,....);
+- ex : ALTER TABLE [表名] ADD COLUMN product_name_pinyin VARCHAR(100);
+```SQL
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+```
+### 删除列
+- ALTER TABLE [表名] DROP COLUMN <列名>;
+  - Oracle和SQL Server中不用写COLUMN
+    - ALTER TABLE [表名] DROP <列名>;
+  - Oracle中同时添加多列时可用括号括起来
+    - ALTER TABLE [表名] ADD (<列名>,<列名>,....);
+- **删除后无法恢复**
+- ex : ALTER TABLE [表名] DROP COLUMN product_name_pinyin VARCHAR(100);
+```SQL
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+```
+## 向表中插入数据
+- MySQL : 
+  - START TRANSACTION;
+  - INSERT INTO [表名] VALUES(与列名对应的数据);
+    - ex : INSERT INTO Product VALUES('0001','T恤衫','衣服',1000,500,'2020-09-12',NULL);
+  - 指定列名插入
+    - INSERT INTO [表名] [列名1,列名2......] VALUES(数据1,数据2......);
+- SQL Server 和PostgreSQL :
+  - BEGIN TRANSACTION;
+
+## 更改表名
+- MySQL : 
+  - RENAME TABLE [旧表名] to [新表名];
+  - ex : RENAME TABLE Product to Products;
