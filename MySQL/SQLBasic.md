@@ -57,6 +57,37 @@ Threads: 2  Questions: 7410  Slow queries: 0  Opens: 375  Flush tables: 3  Open 
   1. /*注释内容*/
    
 # SQL基本语句
+## MySQL在终端中打开监听器
+- 配置环境变量或者切换到MySQL目录下
+- mysql -u [用户] -p
+```SQL
+Enter password: *********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 49
+Server version: 8.0.25 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+```
+## 修改MySQL监视器的提示符
+- prompt [提示的文本]
+  - \d : 数据库名
+  - \h : 主机名
+  - \u : 用户名
+- ex : prompt DB:\d
+```
+mysql>prompt DB:\d> 
+PROMPT set to 'DB:\d>'
+DB:shop>
+```
+
 ## 查看数据库
 - SHOW DATABASES;
 ```SQL
@@ -219,4 +250,13 @@ Records: 0  Duplicates: 0  Warnings: 0
 ## 更改表名
 - MySQL : 
   - RENAME TABLE [旧表名] to [新表名];
-  - ex : RENAME TABLE Product to Products;
+  - ex : 
+
+## 更新数据
+- UPDATE [表名] SET [列名]=[值],[列名]=[值],... WHERE [指定更新的记录需要满足的条件];
+- ex :
+  ```
+  mysql> UPDATE Product SET sale_price=3 WHERE product_id=0007; 
+  Query OK, 1 row affected (0.01 sec)
+  Rows matched: 1  Changed: 1  Warnings: 0
+  ```
