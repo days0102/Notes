@@ -2,13 +2,13 @@
 ## 用户
 ### 创建用户
 - CREATE USER [用户名] IDENTIFIED BY [密码] 
-  ( DEFAULT TABLESPACE [默认表空间名称] --不指定默认为system
-    TEMPORARY TABLESPACE [默认临时表空间名称] --不指定默认为temp
-    QUOTA [空间大小] ON [表空间] --默认为UNLIMITED
-    [用户配置文件名称] --默认为DEFAULT
-    [PASSWORD EXPIRE] --设置口令为过期，登录时强制修改口令
-    ACCOUNT [LOCK/UNLOCK] --默认为UNLOCK
-    ....... --省略其它
+  ( DEFAULT TABLESPACE [默认表空间名称] --不指定默认为system  
+    TEMPORARY TABLESPACE [默认临时表空间名称] --不指定默认为temp  
+    QUOTA [空间大小] ON [表空间] --默认为UNLIMITED  
+    [用户配置文件名称] --默认为DEFAULT  
+    [PASSWORD EXPIRE] --设置口令为过期，登录时强制修改口令  
+    ACCOUNT [LOCK/UNLOCK] --默认为UNLOCK  
+    ....... --省略其它  
   );
 ```SQL
 SQL> CREATE USER mytest IDENTIFIED BY l27 DEFAULT TABLESPACE users QUOTA 20M ON users;
