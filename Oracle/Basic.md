@@ -16,6 +16,33 @@ OWNER
 ADDRESSBOOK
 TEST 
 ```
+## 查看所有用户
+- select * from all_users;
+
+- select * from user_users;
+
+## 查看用户系统权限
+- select * from dba_sys_privs;
+
+- select * from user_sys_privs;
+
+## 查看用户对象权限
+- select * from dba_tab_privs;
+
+- select * from all_tab_privs;
+
+- select * from user_tab_privs;
+
+## 查看所有角色
+- select * from dba_roles;
+## 查看用户所拥有的角色
+- select * from dba_role_privs;
+
+- select * from user_role_privs;
+## 查看当前用户的缺省表空间
+- select username,default_tablespace from user_users;
+
+
 ## 查看当前用户
 - SHOW USER;
 ## 创建用户
