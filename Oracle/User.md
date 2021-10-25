@@ -1,7 +1,8 @@
 # 用户权限与安全
 ## 用户
+---
 ### 创建用户
-- CREATE USER [用户名] IDENTIFIED BY [密码] 
+- CREATE USER [用户名] IDENTIFIED BY [密码]  
   ( DEFAULT TABLESPACE [默认表空间名称] --不指定默认为system  
     TEMPORARY TABLESPACE [默认临时表空间名称] --不指定默认为temp  
     QUOTA [空间大小] ON [表空间] --默认为UNLIMITED  
@@ -11,8 +12,6 @@
     ....... --省略其它  
   );
 ```SQL
-SQL> CREATE USER mytest IDENTIFIED BY l27 DEFAULT TABLESPACE users QUOTA 20M ON users;
-SP2-0640: 未连接
 SQL> conn system
 输入口令: 
 已连接。
@@ -56,11 +55,12 @@ SQL> DROP USER test CASCADE;
 ```
 ---
 ### 管理用户会话
+---
 ### 终止用户会话
 ---
 ## 用户配置文件
 ### 创建用户配置文件
-- CREATE PROFILE [文件名] LIMIT
+- CREATE PROFILE [文件名] LIMIT  
   (...)
 
 ### 使用配置文件
@@ -68,6 +68,7 @@ SQL> DROP USER test CASCADE;
 
 ---
 ## 权限
+---
 ### 系统权限
 - 系统权限指整个Oracle系统的操作权限
 - 系统权限一般由数据库管理员授予用户，并允许用户将被授予的权限授予其它用户

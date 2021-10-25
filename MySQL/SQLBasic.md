@@ -54,7 +54,7 @@ Threads: 2  Questions: 7410  Slow queries: 0  Opens: 375  Flush tables: 3  Open 
 - 单行注释
   1. -- [注释内容] #--后要有空格
 - 多行注释
-  1. /*注释内容*/
+  1. /* 注释内容 */
    
 # SQL基本语句
 ## MySQL在终端中打开监听器
