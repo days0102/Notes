@@ -1,3 +1,11 @@
+<!--
+ * @Author: Linux_Outsider
+ * @Date: 2021-10-12 19:41:00
+ * @LastEditors: Linux_Outsider
+ * @LastEditTime: 2021-10-26 14:51:03
+ * @Description: In User Settings Edit
+ * @FilePath: /Notes/Git/GitRemote.md
+-->
 # Git 远程操作
 ## 查看远程仓库
 - git remote 
@@ -33,3 +41,5 @@
 - git remote rm [仓库名]
 - git re mote rm origin 
 
+## 更改远程仓库的地址
+- git remote set-url [仓库名] [新地址]
