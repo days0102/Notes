@@ -1,3 +1,11 @@
+<!--
+ * @Author: Linux_Outsider
+ * @Date: 2021-10-12 19:41:00
+ * @LastEditors: Linux_Outsider
+ * @LastEditTime: 2021-10-28 23:03:16
+ * @Description: In User Settings Edit
+ * @FilePath: /lwz/Notes/Solutions/Windows/UnloadingProblem.md
+-->
 # Windows 卸载（文件丢失）软件残留
 ![](2021-09-09%20230347.jpg)  
 因为软件已经不在系统中，所以显示的软件只是该软件之前的安装路径
