@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2021-10-29 21:15:35
  * @LastEditors: Outsider
- * @LastEditTime: 2021-10-29 21:23:34
+ * @LastEditTime: 2021-10-29 21:24:59
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Oracle\Index.md
 -->
@@ -22,3 +22,4 @@
 
 ### 删除使用CREATE INDEX创建的索引
 - DROP INDEX index_name;
+
