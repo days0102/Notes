@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2021-10-30 13:56:55
  * @LastEditors: Outsider
- * @LastEditTime: 2021-10-30 17:36:44
+ * @LastEditTime: 2021-10-31 15:30:40
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Oracle\SQLBasic.md
 -->
@@ -54,4 +54,38 @@ REVOKE|收回用户访问数据库结构的权限
 - ASC ：升序
 - DESC ：降序
 - [FOR UPDATE [OP [schema.]table_name | view] column] [NOWAIT] ：查询时将表锁住不让其他用户进行DML操作
+
+
+## WHERE条件中可以使用的操作符
+比较符|说明
+:--:|:--:
+=|等于
+<>、!=|不等于
+<=|小于等于
+\>=|大于等于
+\>|大于
+<|小于
+ANY|与一个列表中的任何值比较
+ALL|与一个列表中的所有值比较
+BETWEEN|指定条件在两个值之间（包含边界值）
+LIKE|匹配字符样式
+IN|匹配的一个列表值
+IS NULL|匹配空值
+
+## ORDER BY 
+- 用于对查询结果进行排序
+- 可以同时对多列进行排序
+
+## GROUP BY 
+- 将表中的列进行分组
+- 列中有多少种不同的数据就会分成多少组
+- 对列分组后可以使用聚合函数进行数据统计
+
+## HAVING
+- 如果使用了GROUP BY ，则HAVING将应用于GROUP BY子句创建的组
+- 如果使用了WHERE而没有使用GROUP BY，则HAVING 将应用于WHERE子句的输出，这个输出被看作一个组
+- 如果没有使用WHERE子句和GROUP BY子句，则HAVING将应用于FROM子句的输出，这个输出被看作一个组
+
+## DISTINCT
+- 用于限定检索结果不出现重复的数据
 
