@@ -1,3 +1,11 @@
+<!--
+ * @Author: Outsider
+ * @Date: 2021-09-10 21:06:02
+ * @LastEditors: Outsider
+ * @LastEditTime: 2021-10-31 21:20:56
+ * @Description: In User Settings Edit
+ * @FilePath: \Notes\Git\GitBasic.md
+-->
 # Git 基础
 ## 初始化Git仓库
 - 切换到初始化的目录
@@ -18,6 +26,8 @@
 - ex : git *.cpp  #跟踪当前目录下的所有.cpp文件
 - ex : git test.py #跟踪test.py文件
 ---
+## 删除跟踪的文件
+- git rm [文件名]
 ## 忽略文件
 -  .gitignore文件
    - 空行或以#开头的行会被忽略
@@ -46,3 +56,7 @@
 - git diff --cached #查看当前已暂存的内容
 ---
 ## 
+
+
+## 将文件从暂缓区中移除
+- git restore --staged [文件名]
