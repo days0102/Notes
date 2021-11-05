@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2021-11-03 21:16:57
  * @LastEditors: Outsider
- * @LastEditTime: 2021-11-03 21:25:25
+ * @LastEditTime: 2021-11-05 19:41:37
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Oracle\Function.md
 -->
@@ -25,5 +25,26 @@
   - 字符串长度从start开始
   - 可以指定长度
 
+### 数字函数
+- ABS(n):返回n的绝对值
+- ACOS(n):反余弦
+- SIN(n):正弦
+- MOD(m,n)：m除n的模
+- EXP(n):e的n次幂
+- POWER(m,n):m的n次幂
+- LOG(m,n):m为底n的对数
+- LN(n):e为底的n的对数
+- CEIL(n):小于等于n的最小整数
+- FLOOR(n):大于等于n的最大整数
+- ROUND(n,[m]):四舍五入到m位，省略m四舍五入到整数
+- SIGN(n):检查数字的正负
+
+### 日期时间函数
+- CURRENT_DATE:当前日期
+- EXTRACT(date FROM datetime):从日期中获取特定数据
+  -date:YEAR,MONTH,DAY,HOUR
+- LAST_DAY(d):返回日期所在月份的最后一天
+- MONTHS_BETWEEN(d1,d2):返回相差的月数
+  
 
 
