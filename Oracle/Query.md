@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2021-10-31 15:40:17
  * @LastEditors: Outsider
- * @LastEditTime: 2021-10-31 17:41:56
+ * @LastEditTime: 2021-11-06 19:06:56
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Oracle\Query.md
 -->
@@ -10,6 +10,9 @@
 # SQL查询
 
 ## SQL多表连接查询
+
+### EXISTS查询
+
 
 ### 内连接
 - FROM join_table1 jion_type join_table2 [ON (join_condition)] [join_type ... ON join_condition , ...];

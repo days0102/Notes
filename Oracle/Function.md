@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2021-11-03 21:16:57
  * @LastEditors: Outsider
- * @LastEditTime: 2021-11-05 19:41:37
+ * @LastEditTime: 2021-11-05 19:42:42
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Oracle\Function.md
 -->
@@ -42,7 +42,7 @@
 ### 日期时间函数
 - CURRENT_DATE:当前日期
 - EXTRACT(date FROM datetime):从日期中获取特定数据
-  -date:YEAR,MONTH,DAY,HOUR
+  - date:YEAR,MONTH,DAY,HOUR
 - LAST_DAY(d):返回日期所在月份的最后一天
 - MONTHS_BETWEEN(d1,d2):返回相差的月数
   
