@@ -2,11 +2,14 @@
  * @Author: Outsider
  * @Date: 2021-10-29 21:25:19
  * @LastEditors: Outsider
- * @LastEditTime: 2021-10-30 13:09:45
+ * @LastEditTime: 2021-11-07 15:23:44
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Oracle\View.md
 -->
 # 视图
+
+## 查看当前用户所有视图
+- SELECT * FROM user_views;
 
 ## 创建视图
 - CREATE [OR REPLACE] [FORCE | NOFORCE] VIEW view_name AS subquery [WITH {CHECK OPTION | READ ONLY} CONSTRAINT cinstraint_name];
