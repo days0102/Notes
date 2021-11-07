@@ -2,13 +2,16 @@
  * @Author: Outsider
  * @Date: 2021-11-03 21:16:57
  * @LastEditors: Outsider
- * @LastEditTime: 2021-11-05 19:42:42
+ * @LastEditTime: 2021-11-07 17:05:18
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Oracle\Function.md
 -->
 # Oracle简单函数
 ## 单行函数
 ### 字符函数
+- str1||str2
+  - 拼接字符串str1和str2
+
 - ASCII(x)  
   - return 字符x的ASCII码值
 
@@ -41,10 +44,14 @@
 
 ### 日期时间函数
 - CURRENT_DATE:当前日期
+- CURRENT_TIME:当前时间
+- CURRENT_TIMESTAMP:当前日期时间
 - EXTRACT(date FROM datetime):从日期中获取特定数据
   - date:YEAR,MONTH,DAY,HOUR
 - LAST_DAY(d):返回日期所在月份的最后一天
 - MONTHS_BETWEEN(d1,d2):返回相差的月数
   
-
+## 转换函数
+- CAST(current_value AS data_type)
+  - 类型转换
 
