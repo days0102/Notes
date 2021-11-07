@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2021-11-07 14:13:56
  * @LastEditors: Outsider
- * @LastEditTime: 2021-11-07 14:52:24
+ * @LastEditTime: 2021-11-07 16:07:30
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Oracle\Constraints.md
 -->
@@ -35,6 +35,7 @@
 
 ### UNIQUE约束
 > 唯一约束，要求约束的列的值不能重复或列组合中的值不全相同。
+> 唯一约束多个NULL值可以同时存在
 - 添加UNIQUE约束
   - 创建表示添加，在添加列时标注
      - column_name data_type [CONSTRAINT constraint_name] UNIQUE;
@@ -52,7 +53,7 @@
      - constraint_name为指定的约束名称
   - 已创建的表中添加NOT NULL 约束
      - ALTER TABLE table_name ADD  [CONSTRAINT constraint_name] PRIMARY KEY(column_name);
-- 删除UNIQUE约束
+- 删除主键约束
   - ALTER TABLE table_name DROP PRIMARY KEY;
   - 使用指定约束名的方式删除
   - ALTER TABLE table_name DROP CONSTRAINT constraint_name;
