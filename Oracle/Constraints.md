@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2021-11-07 14:13:56
  * @LastEditors: Outsider
- * @LastEditTime: 2021-11-07 14:15:23
+ * @LastEditTime: 2021-11-07 14:52:24
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Oracle\Constraints.md
 -->
@@ -80,8 +80,11 @@ SQL> DESC user_cons_columns;
      - constraint_name为指定的约束名称
   - 已创建的表中添加CHECK约束
      - ALTER TABLE table_name ADD  [CONSTRAINT constraint_name] CHECK(check_condition);
-<!-- - 删除CHECK约束
-  - ALTER TABLE table_name DROP CHECK(column_name); -->
+```SQL
+studentsex CHAR(2) CHECK(studentsex IN('男','女'));--学生性别列在男女之间选
+```
+- 删除CHECK约束
+  - ALTER TABLE table_name DROP CHECK(column_name);
 
 ### FOREIGN KEY约束
 >外键约束，用于引用本表中或另一个表的一列或一组列
