@@ -85,20 +85,35 @@ SQL> GRANT CREATE SESSION TO mytest;
   - privilege: 当前用户拥有的系统权限
   - admin_option: 当前用户是否有权利将该权限授予其它用户
 ```SQL
-USERNAME
-------------------------------------------------------------
-PRIVILEGE
---------------------------------------------------------------------------------
-ADMIN_
-------
-MYTEST
-CREATE SESSION
-NO
+MYTEST	CREATE TABLE	NO
+MYTEST	CREATE SESSION	NO
+MYTEST	CREATE VIEW	NO
 ```
 
 ### 撤销权限
 - REVOKE [系统权限,系统权限,...] TO [用户|角色|PUBLIC];
 
+## 对象权限
+### 对象权限数据词典
+- user_tab_privs:已授权的对象权限信息
+  - GRANTEE:权限所授予的用户
+  - TABLE_NAME:权限所针对的对象
+  - GRANTOR:授权者
+  - PRIVILEGE:所授予的对象权限
+  - GRANTABLE:是否可以将该权限授予其他用户
+  - HIERARCHY:权限是否构成层次关系
+
+### 授予对象权限
+- GRANT object_privilege,...| ALL [PRIVILEGE] ON <schema.>object_name TO user_name,...|role_name,...|PUBLIC [WITH GRANT OPTION];
+
+### 撤销对象权限
+- REVOKE object_privilege,...|ALL [PRIVILEGE] ON <schema.>object_name FROM user_name,...|role_name,...|PUBLIC;
+
+### 列对象上的权限（针对INSERT,UPDATE,REFERENCES）
+- object_privilege(column_name,...)
+```SQL
+GRANT UPDATE(a,b) ON emp TO user;--将更新emp表上的a,b列的权限授予user
+```
 
 ## 角色
 ### 创建角色
