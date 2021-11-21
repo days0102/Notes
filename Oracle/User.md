@@ -90,8 +90,16 @@ MYTEST	CREATE SESSION	NO
 MYTEST	CREATE VIEW	NO
 ```
 
-### 撤销权限
+### 撤销系统权限
 - REVOKE [系统权限,系统权限,...] TO [用户|角色|PUBLIC];
+### 撤销系统权限对一些相关对象的影响
+1. 假设管理员SYS将SELECT ANY TABLE系统权限授予个用户rose,所以rose是可以查看其他所有用户名下的对象的，此时rose创建了一个过程或视图，在其中使用了用户donna的数据表，那么在撤销了这个权限后，这些过程或视图将无效。
+2. 如果系统管理员SYS和SYSTEM都将同一个系统权限授予个rose,如果SYS回收了这个系统权限时，rose还是继续拥有这个系统权限，因为SYSTEM赋予的权限还在生效。
+### 撤销系统权限时的级联问题
+1. 撤销系统权限时没有级联效果，这与该系统权限是否使用ADMIN OPTION授权无关。
+2. 假设数据库管理员SYS使用ADMIN OPTION将系统权限CREATE TABLE赋予了rose,rose马上创建了一个表，并将CREATE TABLE这个权限赋予donna,donna也创建了一个表，此时SYS撤销了rose的CREATE TABLE权限，那么结果是rose原来创建的表仍然存在，但不能再创建表了，而donna的表也仍然存在，而且可以继续创建新表。
+
+
 
 ## 对象权限
 ### 对象权限数据词典
@@ -106,15 +114,17 @@ MYTEST	CREATE VIEW	NO
 ### 授予对象权限
 - GRANT object_privilege,...| ALL [PRIVILEGE] ON <schema.>object_name TO user_name,...|role_name,...|PUBLIC [WITH GRANT OPTION];
 
-### 撤销对象权限
-- REVOKE object_privilege,...|ALL [PRIVILEGE] ON <schema.>object_name FROM user_name,...|role_name,...|PUBLIC;
-
 ### 列对象上的权限（针对INSERT,UPDATE,REFERENCES）
 - object_privilege(column_name,...)
 ```SQL
 GRANT UPDATE(a,b) ON emp TO user;--将更新emp表上的a,b列的权限授予user
 ```
+### 撤销对象权限
+- REVOKE object_privilege,...|ALL [PRIVILEGE] ON <schema.>object_name FROM user_name,...|role_name,...|PUBLIC;
 
+### 撤销权限时的级联问题
+1. 如果对象权限是用WITH GRANT OPTION授予的，则撤销对象权限也将导致级联撤销
+   
 ## 角色
 ### 创建角色
 - CREATE ROLE [角色名] (NO IDENTIFIED | IDENTIFIED BY [密码]);
