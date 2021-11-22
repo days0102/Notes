@@ -126,6 +126,18 @@ GRANT UPDATE(a,b) ON emp TO user;--将更新emp表上的a,b列的权限授予use
 1. 如果对象权限是用WITH GRANT OPTION授予的，则撤销对象权限也将导致级联撤销
    
 ## 角色
+
+### 角色数据字典
+- DBA_ROLE_PRIVS:角色授予信息
+  - GRANTEE:被授予角色
+  - GRANTED_ROLE:授予的角色
+  - ADMIN_OPTION:是否可以传递
+  - DEFAUKT_ROLE:是否是该角色的默认用户
+- ROLE_SYS_PRIVS:角色具有的权限
+  - ROLE:角色
+  - PRIVILEGE:具有权限
+  - ADM:是否可以传递
+
 ### 创建角色
 - CREATE ROLE [角色名] (NO IDENTIFIED | IDENTIFIED BY [密码]);
 ```SQL
@@ -138,3 +150,8 @@ SQL> CREATE ROLE myrole IDENTIFIED BY l27;
 
 ### 将角色授予用户
 - GRANT [角色] TO [用户];
+
+### 修改角色
+- 修改角色只能修改它的验证方法
+- ALTER ROLE role_name [NO IDENTIFIED | IDENTIFIED BY ...];
+- 
