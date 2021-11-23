@@ -1,10 +1,10 @@
 <!--
  * @Author: Outsider
  * @Date: 2021-10-31 18:59:36
- * @LastEditors: Linux_Outsider
- * @LastEditTime: 2021-10-31 19:52:39
+ * @LastEditors: Outsider
+ * @LastEditTime: 2021-11-23 17:45:37
  * @Description: In User Settings Edit
- * @FilePath: /lwz/Notes/Docker/Basic.md
+ * @FilePath: \Notes\Docker\Basic.md
 -->
 ## 使用Docker镜像
 ### 启动docker服务
@@ -26,6 +26,11 @@ hello-world   latest    feb5d9fea6a5   5 weeks ago   13.3kB
 
 ### 搜寻镜像
 - docker search <u>keyword</u>
+
+### 查看容器运行状态
+- docker ps
+
+
 
 ### 删除和清理镜像
 - docker rmi <u>image_name</u>
