@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2021-10-31 18:59:36
  * @LastEditors: Outsider
- * @LastEditTime: 2021-11-23 17:45:37
+ * @LastEditTime: 2021-11-23 19:22:13
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Docker\Basic.md
 -->
@@ -35,3 +35,6 @@ hello-world   latest    feb5d9fea6a5   5 weeks ago   13.3kB
 ### 删除和清理镜像
 - docker rmi <u>image_name</u>
 - docker image rm <u>image_name</u>
+
+### 清理none镜像
+- docker system prune -f

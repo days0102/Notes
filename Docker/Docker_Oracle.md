@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2021-11-23 17:37:25
  * @LastEditors: Outsider
- * @LastEditTime: 2021-11-23 18:00:48
+ * @LastEditTime: 2021-11-23 19:35:35
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Docker\Docker_Oracle.md
 -->
@@ -26,7 +26,7 @@ export PATH=$ORACLE_HOME/bin:$PATH
 - source /etc/profile
 6. 切换至oracle,登录sqlplus
 - su - oracle
-
+密码：helowin
 - sqlplus /nolog
 
 - conn /as sysdba
