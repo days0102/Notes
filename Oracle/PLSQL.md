@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2021-11-29 15:50:39
  * @LastEditors: Outsider
- * @LastEditTime: 2021-11-29 16:50:08
+ * @LastEditTime: 2021-11-29 19:43:27
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Oracle\PLSQL.md
 -->
@@ -59,3 +59,25 @@ END;
 - INSERT INTO table[(column...)] AS subquery; --插入多条数据
 - UPDATE table SET column=val ... WHERE condition;
 - DELETE FROM table WHERE condition;
+
+
+
+## 过程Procedure
+```SQL
+CREATE [OR REPLACE] PROCEDURE procedure_name(argument1 [model1] data_type,...)
+IS [AS]
+PL/SQL BLOCK;
+```
+- IN : 默认输入参数
+- OUT : 输出参数
+- IN OUT : 输入输出参数
+
+### 查看过程源代码
+- SELECT text FROM user_source WHERE name='procedure_name';
+
+### 执行过程
+- EXEC procedure_name(argument...);
+1. 位置传参：调用时按照参数定义顺序依次传参
+2. 名称传参：调用时指定参数名，使用=>提供参数
+   - EXECT PROCE(name=>'Lin');
+3. 组合传参：调用使用位置传参和名称传参
