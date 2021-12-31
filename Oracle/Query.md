@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2021-10-31 15:40:17
  * @LastEditors: Outsider
- * @LastEditTime: 2021-11-06 19:06:56
+ * @LastEditTime: 2021-12-31 19:36:02
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Oracle\Query.md
 -->
@@ -14,7 +14,7 @@
 ### EXISTS查询
 
 
-### 内连接
+### 连接
 - FROM join_table1 jion_type join_table2 [ON (join_condition)] [join_type ... ON join_condition , ...];
 - join_table : 参与连接的表名
 - join_type : 连接类型
