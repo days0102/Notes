@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2021-10-31 15:40:17
  * @LastEditors: Outsider
- * @LastEditTime: 2021-12-31 19:36:02
+ * @LastEditTime: 2021-12-31 19:38:43
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Oracle\Query.md
 -->
@@ -20,6 +20,8 @@
 - join_type : 连接类型
   - INNER JOIN : 内连接
   - OUTER JOIN : 外连接
+     - LEFT OUTER JOIN : 左外连接
+     - 
   - CROSS JOIN : 交叉连接
 - join_condition : 连接条件
 > 等值连接：连接条件使用=运算符比较被连接的值  
