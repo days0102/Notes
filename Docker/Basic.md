@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2021-10-31 18:59:36
  * @LastEditors: Outsider
- * @LastEditTime: 2021-11-23 19:22:13
+ * @LastEditTime: 2022-01-15 23:44:06
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Docker\Basic.md
 -->
@@ -26,6 +26,10 @@ hello-world   latest    feb5d9fea6a5   5 weeks ago   13.3kB
 
 ### 搜寻镜像
 - docker search <u>keyword</u>
+
+
+### 容器启动
+docker run 
 
 ### 查看容器运行状态
 - docker ps
