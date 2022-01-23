@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2022-01-22 21:15:03
  * @LastEditors: Outsider
- * @LastEditTime: 2022-01-22 21:17:21
+ * @LastEditTime: 2022-01-22 21:59:00
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Vim\vimrc.md
 -->
@@ -128,3 +128,34 @@ set autoindent    "自动缩进
 ```
 
 ## 键盘映射
+> 关于键盘符号的详细说明，请使用:h key-notation命令查看帮助信息。
+1. Escape键<Esc>
+2. Enter键<CR>
+3. Ctrl+Esc健<C-Esc>
+4. Shift+F1<S-F1> --对于Mac用户，使用<D>代表Command键。
+5. Alt键可以使用<M-key>或<A-key>来表示。
+
+
+- i 表示在insert模式下生效
+- v 表示在visual模式下生效
+- n 表示在normal模式下生效
+- c 表示在cmdline模式下生效
+```VIM
+nnoremap a b
+"将a映射成b,在normal模式下生效
+```
+### map
+> 直接映射，会递归
+```VIM
+map a b
+map b a
+"会递归映射
+noremap a b
+noremap b c
+"最终结果为a映射成c
+```
+### noremap
+> 非递归映射
+```VIM
+
+```
