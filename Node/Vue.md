@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2022-01-21 19:13:33
  * @LastEditors: Outsider
- * @LastEditTime: 2022-01-21 19:50:40
+ * @LastEditTime: 2022-01-27 16:41:25
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Node\Vue.md
 -->
@@ -19,7 +19,7 @@
    - sudo cnpm install -g vue-cli
 
 
-## 创建Vue项目
+## 创建Vue2项目
 - vue init webpack [项目名]
-- cnpm install
+- npm install
 - npm run dev
