@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2021-10-31 18:59:36
  * @LastEditors: Outsider
- * @LastEditTime: 2022-01-15 23:44:06
+ * @LastEditTime: 2022-01-29 13:08:33
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Docker\Basic.md
 -->
@@ -34,7 +34,8 @@ docker run
 ### 查看容器运行状态
 - docker ps
 
-
+### 启动已暂停的容器
+- docker start [容器ID或容器名]
 
 ### 删除和清理镜像
 - docker rmi <u>image_name</u>
