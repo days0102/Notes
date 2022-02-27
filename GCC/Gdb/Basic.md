@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2022-02-22 15:21:20
  * @LastEditors: Outsider
- * @LastEditTime: 2022-02-22 15:51:34
+ * @LastEditTime: 2022-02-22 16:48:23
  * @Description: In User Settings Edit
  * @FilePath: \Notes\GCC\Gdb\Basic.md
 -->
@@ -22,4 +22,4 @@
 - n (next)  : 单步执行，遇到不进入函数
 - s (step)  : 单步执行，遇到函数进入函数
 - c (continue) : 继续执行
-- q (quit)  : 退出
+- q (quit)  : 退出 
