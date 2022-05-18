@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2022-02-22 15:21:20
  * @LastEditors: Outsider
- * @LastEditTime: 2022-04-16 14:42:25
+ * @LastEditTime: 2022-05-11 21:06:40
  * @Description: In User Settings Edit
  * @FilePath: \Notes\GCC\Gdb\Basic.md
 -->
@@ -33,6 +33,7 @@
 |bt|查看堆栈
 q|退出gdb
 help|查看帮助
+info reg| 查看寄存器状态
 
 
 ## 其他命令
