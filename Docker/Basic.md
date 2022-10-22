@@ -2,7 +2,7 @@
  * @Author: Outsider
  * @Date: 2021-10-31 18:59:36
  * @LastEditors: Outsider
- * @LastEditTime: 2022-01-29 13:08:33
+ * @LastEditTime: 2022-10-22 11:19:21
  * @Description: In User Settings Edit
  * @FilePath: \Notes\Docker\Basic.md
 -->
@@ -37,9 +37,22 @@ docker run
 ### 启动已暂停的容器
 - docker start [容器ID或容器名]
 
-### 删除和清理镜像
+### 删除和清理容器
 - docker rmi <u>image_name</u>
-- docker image rm <u>image_name</u>
+
+### 删除和清理镜像
+- 删除应用  docker image rm [image_name]:[tag]
+- 删除所有引用 docker image rm [image_id]
 
 ### 清理none镜像
 - docker system prune -f
+
+### 重命名容器
+- docker rename [old_name] [new_name]
+
+### 重命名tag镜像
+- docker tag [image_id] [repo_name]:[tag]
+  ```
+  命令会创建一个原镜像的应用作为tag
+  
+  ```
