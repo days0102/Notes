@@ -41,4 +41,19 @@ r2(config-if)#ppp authentication chap
 **两端密码要保持一致**
 
 
+### 配置静态NAT
+
+1. 声明路由器的**所有**端口是内部还是外部（进入接口，ip nat inside/outside）
+2. 配置静态NAT（ip nat inside source static <u>内部IP</u> <u>外部IP</u>）
+
+### 控制访问列表
+
+1. 控制访问语句（access-list <u>id</u>  deny/permit <u>协议</u> host <u>源IP</u> <u>目的IP</u> <u>端口</u>）
+2. 进入接口启用控制访问（ip access-group <u>id</u> in/out）
+
+r2(config)#access-list 100 deny icmp host 192.168.1.2 host 192.168.1.3 echo
+r2(config)#interface Serial 0
+r2(config-if)#ip access-group 100 in
+
+### OSPF
 
